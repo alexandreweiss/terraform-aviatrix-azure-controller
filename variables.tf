@@ -1,11 +1,13 @@
 variable "access_account_name" {
   type        = string
   description = "aviatrix controller access account name"
+default = "alweiss-internal"
 }
 
 variable "account_email" {
   type        = string
   description = "aviatrix controller access account email"
+  sensitive   = true
 }
 
 variable "app_name" {
@@ -16,22 +18,25 @@ variable "app_name" {
 
 variable "aviatrix_customer_id" {
   type        = string
-  description = "aviatrix customer license id"
+  sensitive   = true
 }
 
 variable "avx_controller_admin_email" {
   type        = string
   description = "aviatrix controller admin email address"
+  sensitive   = true
 }
 
 variable "avx_controller_admin_password" {
   type        = string
   description = "aviatrix controller admin password"
+  sensitive   = true
 }
 
 variable "controller_name" {
   type        = string
   description = "Customized Name for Aviatrix Controller"
+  default     = "avx-ctl"
 }
 variable "controller_subnet_cidr" {
   type        = string
@@ -54,7 +59,7 @@ variable "controller_virtual_machine_admin_username" {
 variable "controller_virtual_machine_admin_password" {
   type        = string
   description = "Admin Password for the controller virtual machine."
-  default     = "aviatrix1234!"
+  sensitive   = true
 }
 
 variable "controller_virtual_machine_size" {
@@ -78,10 +83,11 @@ variable "create_custom_role" {
 variable "incoming_ssl_cidr" {
   type        = list(string)
   description = "Incoming cidr for security group used by controller"
+  default     = ["86.192.227.204"]
 }
 
 variable "location" {
   type        = string
   description = "Resource Group Location for Aviatrix Controller"
-  default     = "West US"
+  default     = "West Europe"
 }

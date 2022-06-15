@@ -6,12 +6,22 @@ terraform {
     }
     azuread = {
       source  = "hashicorp/azuread"
-      version = "~> 2.0"
+      version = "~> 2.23.0"
     }
     null = {
       source = "hashicorp/null"
     }
   }
+}
+
+
+provider "azurerm" {
+   features {
+	}
+}
+
+provider "azuread" {
+  tenant_id = "72f988bf-86f1-41af-91ab-2d7cd011db47"
 }
 
 module "aviatrix_controller_azure" {
