@@ -83,7 +83,7 @@ variable "create_custom_role" {
 variable "incoming_ssl_cidr" {
   type        = list(string)
   description = "Incoming cidr for security group used by controller"
-  default     = ["86.192.227.204"]
+  sensitive   = true
 }
 
 variable "location" {
