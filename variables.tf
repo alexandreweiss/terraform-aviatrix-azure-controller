@@ -80,11 +80,13 @@ variable "create_custom_role" {
   default     = false
 }
 
-variable "incoming_ssl_cidr" {
-  type        = list(string)
+variable "azure_tenant_id" {
+  type        = string
   description = "Incoming cidr for security group used by controller"
-  sensitive   = true
+  default     = "72f988bf-86f1-41af-91ab-2d7cd011db47"
 }
+
+
 
 variable "location" {
   type        = string
