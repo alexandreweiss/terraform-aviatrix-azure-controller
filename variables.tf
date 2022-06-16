@@ -87,7 +87,7 @@ variable "azure_tenant_id" {
 }
 
 variable "incoming_ssl_cidr" {
-  type        = string
+  type        = list(string)
   description = "Incoming cidr for security group used by controller"
   sensitive   = true
 }
