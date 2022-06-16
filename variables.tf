@@ -83,9 +83,14 @@ variable "create_custom_role" {
 variable "azure_tenant_id" {
   type        = string
   description = "Incoming cidr for security group used by controller"
-  default     = "72f988bf-86f1-41af-91ab-2d7cd011db47"
+  sensitive   = true
 }
 
+variable "incoming_ssl_cidr" {
+  type        = string
+  description = "Incoming cidr for security group used by controller"
+  sensitive   = true
+}
 
 
 variable "location" {
